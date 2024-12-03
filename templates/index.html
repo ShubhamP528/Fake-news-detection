@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake News Detection</title>
+    <!-- Link to the CSS file -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📰 Fake News Detector</h1>
+        <p>Your AI-powered tool to verify the authenticity of news articles.</p>
+      </header>
+      <main>
+        <label for="modelSelect" style="color: #fff; margin-bottom: 10px"
+          >Choose a model:</label
+        >
+        <select
+          id="modelSelect"
+          style="
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+          "
+        >
+          <option value="logistic_regression">Logistic Regression</option>
+          <option value="decision_tree">Decision Tree</option>
+          <option value="random_forest">Random Forest</option>
+          <option value="multinomial_nb">Multinomial Naive Bayes</option>
+        </select>
+
+        <textarea
+          id="newsInput"
+          placeholder="Type or paste the news article here..."
+          rows="6"
+        ></textarea>
+        <button onclick="checkFakeNews()">🔍 Check Now</button>
+        <div id="result" class="result"></div>
+      </main>
+      <footer>
+        <p>&copy; 2024 Fake News Detection | Powered by AI</p>
+      </footer>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
